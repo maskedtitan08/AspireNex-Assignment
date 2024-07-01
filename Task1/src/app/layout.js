@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import FireFliesBackground from "@/components/FireFliesBackground";
 import "./globals.css";
 import clsx from "clsx";
 
@@ -28,6 +29,8 @@ export default function RootLayout({ children }) {
         )}
       >
         {children}
+        <FireFliesBackground />
+
         <div id="my-modal" />
       </body>
     </html>
