@@ -102,6 +102,12 @@ export const projectsData = [
       newTab: true,
     },
     {
+      label: "Leetcode",
+      link: "https://leetcode.com/u/maskedtitan_08/",
+      icon: "code",
+      newTab: true,
+    },
+    {
       label: "Resume",
       link: "/resume.pdf",
       icon: "resume",
