@@ -1,11 +1,12 @@
 
 'use client';
 import { createBoard } from "@/app/actions/boardActions";
-import { redirect } from "next/navigation";
+import { useRouter} from "next/navigation";
 import { useState } from 'react';
 
 export default function NewBoardPage() {
   const [boardName, setBoardName] = useState('');
+  const router = useRouter()
 
   async function handleNewBoardSubmit(event) {
     event.preventDefault(); 
@@ -14,7 +15,7 @@ export default function NewBoardPage() {
     console.log("created board")
     console.log(roomInfo,roomInfo.id);
     if (roomInfo) {
-      redirect(`/boards/${roomInfo.id}`);
+      router.push(`/boards/${roomInfo.id}`)
     }
   }
 
