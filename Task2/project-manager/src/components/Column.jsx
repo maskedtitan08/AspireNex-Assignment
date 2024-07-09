@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { shallow } from "@liveblocks/core";
 import { FormEvent, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
+import CancelButton from "@/components/CancelButton";
+import NewCardForm from "@/components/forms/NewCardForm";
+import { default as ColumnCard } from "@/components/Card";
+
+
 
 export default function Column({ id, name }) {
   const [renameMode, setRenameMode] = useState(false);
@@ -111,10 +116,14 @@ export default function Column({ id, name }) {
             className="min-h-12"
             ghostClass="opacity-40"
           >
-            
+            {columnCards.map((card) => (
+              <ColumnCard key={card.id} id={card.id} name={card.name} />
+            ))}
           </ReactSortable>
         </>
       )}
+      {!renameMode && <NewCardForm columnId={id} />}
+
     </div>
   );
 }

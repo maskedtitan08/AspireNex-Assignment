@@ -68,6 +68,13 @@ export default function Board({ id, name }) {
                     </form>
                   )}
                 </div>
+                <Link
+                  className="flex gap-2 items-center btn"
+                  href={`/boards/${id}/settings`}
+                >
+                  <FontAwesomeIcon icon={faCog} />
+                  Board settings
+                </Link>
               </div>
               <Columns />
             </>
